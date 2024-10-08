@@ -2,8 +2,9 @@ public class PruebaAuto {
     public static void main(String[] args) {
         //Crea un espacio en la memoria para el constructor con un objeto, esto es instanciar, los objetos se declaran
         //con minuscula
-        Automovil auto = new Automovil();
-        auto.setMarca("BMW");
+        Automovil auto = new Automovil("BMW");
+        //otra forma de mandar datos es usando constructores con parametros, ya no se necesitaria el setMarca
+        //auto.setMarca("BMW");
         auto.setModelo("i320");
         auto.setColor("Blanco"); //polimorfismo
         auto.setCilindraje(3.2);
@@ -21,15 +22,16 @@ public class PruebaAuto {
         //auto.detalleauto();
         //si no instancio no aparece el metodo
 
-        Automovil mb = new Automovil();
-        mb.setMarca("Mercedes Benz");
-        mb.setModelo("C200");
+        Automovil mb = new Automovil("MB", "C250");
+        //mb.setMarca("Mercedes Benz");
+        //mb.setModelo("C200");
         mb.setColor("Gris");//polimorfismo
         mb.setCilindraje(2.5);
         //mb.detalleauto();
         System.out.println(mb.detalleauto());
         //solo instanciando aparecen los atributos
 
+        System.out.println(auto.equals(mb));
 
 
 
@@ -40,9 +42,9 @@ public class PruebaAuto {
         carrito.modelo = "Spyder";
         carrito.anio = 2024;
         carrito.metodocarro();
-        
-        
-        
-        
+
+
+
+
     }
 }
