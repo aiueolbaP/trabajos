@@ -36,14 +36,10 @@ public class PruebaAuto {
 
 
 
-        AutoDeportivo carrito = new AutoDeportivo();
-        carrito.marca = "Porsche";
-        carrito.color = "Negro";
-        carrito.modelo = "Spyder";
-        carrito.anio = 2024;
-        carrito.metodocarro();
-
-
+        Automovil toyota = new Automovil("Toyota", "Fortuner", "Negro", 3);
+        //este constructor llama a los que tienen los valores como parametros
+        System.out.println(toyota.detalleauto());
+        System.out.println("toyota.getMarca() = " + toyota.getMarca());
 
 
     }
