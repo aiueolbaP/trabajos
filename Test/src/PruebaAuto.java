@@ -1,5 +1,10 @@
+import javax.swing.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class PruebaAuto {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //Crea un espacio en la memoria para el constructor con un objeto, esto es instanciar, los objetos se declaran
         //con minuscula
         Automovil auto = new Automovil("BMW");
@@ -42,5 +47,33 @@ public class PruebaAuto {
         System.out.println("toyota.getMarca() = " + toyota.getMarca());
 
 
+
+
+        Automovil coro = new Automovil();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        JOptionPane.showInputDialog("Marca: ");
+
+        String var1;
+        System.out.println("Modelo: ");
+        var1 = br.readLine();
+        System.out.println("");
+        coro.setModelo(var1);
+        System.out.println("El modelo es: " + var1);
+
+
+        int var2;
+        System.out.println("Cilindraje: ");
+        var2 = Integer.parseInt(br.readLine());
+        System.out.println("");
+        coro.setModelo(String.valueOf(var2));
+        System.out.println("Cilindraje es: " + var2);
+
+
+        String var3;
+        System.out.println("Color: ");
+        var3 = br.readLine();
+        coro.setColor(var3);
+        JOptionPane.showMessageDialog(null, "El color es: " + coro.getColor());
     }
 }
