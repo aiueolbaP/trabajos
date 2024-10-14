@@ -4,6 +4,8 @@ public class Automovil {
     private String color = "Negro";
     private double cilindraje;
     private float consumo = 40;
+    //este static solo le sirve a esta clase y todos seran SUV, el static no se puede cambiar
+    static String tipo = "SUV";
 
 
     //constructores
@@ -12,55 +14,82 @@ public class Automovil {
 
     }
 
-    public Automovil(String marca){
+    public Automovil(String marca) {
         this.marca = marca;
     }
 
     public Automovil(String marca, String modelo){
-        this.marca = marca;
+        this(marca); // llama al constructor que tiene marca
         this.modelo = modelo;
     }
-    //no necesita devolver nada xq es constructor
 
+    public Automovil(String marca, String modelo, String color) {
+        this(marca, modelo); // llama al constructor que tiene marca y modelo
+        this.color = color;
+    }
+
+    public Automovil(String marca, String modelo, String color, double cilindraje) {
+        this(marca, modelo, color); // de igual manera
+        this.cilindraje = cilindraje;
+    }
+
+    public Automovil(String marca, String modelo, String color, double cilindraje, float consumo) {
+        this(marca, modelo, color, cilindraje); // de igual manera
+        this.consumo = consumo;
+    }
+    //no necesita devolver nada xq es constructor
+    //los static no necesitan ser parametro en constructores
     //para acceder a los valores de atributos privados el metodo debe ser publico
+
+
     //getter y setter
     public String getMarca() {
+
         return marca;
     }
 
     public void setMarca(String marca) {
+
         this.marca = marca;
     }
 
     public String getModelo() {
+
         return modelo;
     }
 
     public void setModelo(String modelo) {
+
         this.modelo = modelo;
     }
 
     public String getColor() {
+
         return color;
     }
 
     public void setColor(String color) {
+
         this.color = color;
     }
 
     public double getCilindraje() {
+
         return cilindraje;
     }
 
     public void setCilindraje(double cilindraje) {
+
         this.cilindraje = cilindraje;
     }
 
     public float getConsumo() {
+
         return consumo;
     }
 
     public void setConsumo(float consumo) {
+
         this.consumo = consumo;
     }
 
@@ -94,9 +123,10 @@ public class Automovil {
 
         sb.append("La marca del auto es: "+ this.marca + " \n");//este es con sout
             //this sirve con private porque esta dentro de la misma clase
-        sb.append("auto.modelo = " + this.modelo + " \n");//este es con soutv
-        sb.append("auto.color = " + this.color + " \n");
-        sb.append("auto.cilindraje = " + this.cilindraje + " \n");
+        sb.append("amodelo = " + this.modelo + " \n");//este es con soutv
+        sb.append("color = " + this.color + " \n");
+        sb.append("cilindraje = " + this.cilindraje + " \n");
+        sb.append("tipo = " + Automovil.tipo + " \n"); //se lo llama con la clase directamente
         return sb.toString();
     }
 
